@@ -1,0 +1,1 @@
+Static sites for my teaching classes.
