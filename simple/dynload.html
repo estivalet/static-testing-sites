@@ -1,0 +1,158 @@
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<script src="js/jquery-3.6.0.min.js"></script>
+</head>
+
+<h2>Dynamic load event demo 1 - show hidden element</h2>
+
+<div id="start">
+	<button onclick="start()">Start 1</button>
+</div>
+
+<img id="loading-img" src="img/ajax-loader.gif" style="display:none">
+
+<div id='finish' style='display:none'>
+<h4>Hello World!</h4>
+</div>
+
+
+<h2>Dynamic load event demo 2 - create element on the fly</h2>
+
+<div id="start2">
+	<button onclick="start2()">Start 2</button>
+</div>
+<div id="content">
+</div>
+
+<div class="example">
+  <h4>Dynamic Controls</h4>
+  <p>This example demonstrates when elements (e.g., checkbox, input field, etc.) are changed asynchronously.</p>
+
+  <h4 class=subheader>Remove/add</h4>
+  </br>
+  <form id="checkbox-example">
+    <div id="checkbox"><input type="checkbox" label="blah"> A checkbox</div>
+    <button autocomplete="off" type="button" onclick="swapCheckbox()">Remove</button>
+  </form>
+
+  <hr>
+
+  </br>
+  <h4 class=subheader>Enable/disable</h4>
+  </br>
+  <form id="input-example">
+    <input type="text" disabled style="width: 30%;">
+    <button autocomplete="off" type="button" onclick="swapInput()">Enable</button>
+  </form>
+<div>
+
+      </div>
+    </div>
+
+<script>
+function start() {
+	document.getElementById("start").style.display = "none";
+	document.getElementById("loading-img").style.display = "block";
+	setTimeout(function() {
+		document.getElementById("loading-img").style.display = "none";
+		document.getElementById("finish").style.display = "block";
+	} , 5000 );
+}
+
+function start2() {
+	document.getElementById("start").style.display = "none";
+	
+	const img = document.createElement("img");
+	img.src = "img/ajax-loader.gif";
+	img.id = "dynamic-image";
+	document.getElementById("content").appendChild(img);	
+	
+	setTimeout(function() {
+		img.parentNode.removeChild(img);
+		
+		const p = document.createElement("p");
+		p.innerHTML = "Hello Dynamic Element Created!";
+		document.getElementById("content").appendChild(p);		
+		
+	} , 5000 );
+}
+
+
+
+ function swapInput() {
+    disableButton("#input-example button");
+    clearMessage();
+    showDelay("#input-example button");
+    pauseThenToggleControls("input");
+  }
+
+  function swapCheckbox (){
+    disableButton("#checkbox-example button");
+    clearMessage();
+    showDelay("#checkbox-example button");
+    pauseThenToggleControls("checkbox");
+  };
+
+  function disableButton(locator) {
+    $(locator).attr("disabled", true);
+  };
+
+  function clearMessage() {
+    if ($("#message").length) {
+       $("#message").first().remove();
+    }
+  };
+
+  function showDelay(locator) {
+    $(locator).after("<div id='loading'>Wait for it... <img src='img/ajax-loader.gif'></div></br>");
+  };
+
+  function pauseThenToggleControls(target) {
+    setTimeout(function() {
+      if (target === "checkbox") {
+        toggleCheckboxControls();
+      } else if (target === "input") {
+        toggleInputControls();
+      }
+    }, 3000 );
+  };
+
+  function toggleCheckboxControls() {
+    var btn = $("#checkbox-example button").first();
+    var check = $("#checkbox").first();
+    var load = $("#loading");
+    if ( btn.text() == "Remove") {
+      check.remove();
+      btn.text("Add");
+      btn.after("<p id='message'>It's gone!</p>");
+      btn.attr("disabled", false);
+      load.hide();
+    } else {
+      btn.text("Remove");
+      btn.after("<div><input type='checkbox' id='checkbox'> A checkbox</div>");
+      btn.after("<p id='message'>It's back!</p>");
+      btn.attr("disabled", false);
+      load.hide();
+    }
+  };
+
+  function toggleInputControls() {
+    var btn = $("#input-example button").first();
+    var input = $("#input-example input").first();
+    var load = $("#loading");
+    if ( btn.text() == "Enable") {
+      input.prop("disabled", false)
+      btn.after("<p id='message'>It's enabled!</p>");
+      btn.text("Disable");
+      btn.attr("disabled", false);
+      load.hide();
+    } else {
+      btn.text("Enable");
+      input.prop("disabled", true)
+      btn.after("<p id='message'>It's disabled!</p>");
+      btn.attr("disabled", false);
+      load.hide();
+    }
+  };
+</script>
