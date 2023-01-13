@@ -107,6 +107,12 @@
                   <p>Testing page</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="loading.html" class="nav-link">
+                  <i class="nav-icon fas fa-edit"></i>
+                  <p>Loading page</p>
+                </a>
+              </li>
             </ul>
           </nav>
           <!-- /.sidebar-menu -->
@@ -180,18 +186,18 @@
                           <label>Date of Birth:</label>
                           <div
                             class="input-group date"
-                            id="reservationdate"
+                            id="birthdate"
                             data-target-input="nearest"
                           >
                             <input
                               id="birth"
                               type="text"
                               class="form-control datetimepicker-input"
-                              data-target="#reservationdate"
+                              data-target="#birthdate"
                             />
                             <div
                               class="input-group-append"
-                              data-target="#reservationdate"
+                              data-target="#birthdate"
                               data-toggle="datetimepicker"
                             >
                               <div class="input-group-text">
@@ -610,7 +616,12 @@
                 </div>
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-submit another-fancy-class test-button"
+                  >
+                    Submit
+                  </button>
                 </div>
 
                 <!-- /.card-body -->
@@ -777,6 +788,229 @@
               </div>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Example Table</h3>
+
+                  <div class="card-tools">
+                    <div
+                      class="input-group input-group-sm"
+                      style="width: 150px"
+                    >
+                      <input
+                        type="text"
+                        name="table_search"
+                        class="form-control float-right"
+                        placeholder="Search"
+                      />
+
+                      <div class="input-group-append">
+                        <button type="submit" class="btn btn-default">
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body table-responsive p-0">
+                  <table class="table table-hover text-nowrap">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>User</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Reason</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr id="183">
+                        <td>183</td>
+                        <td>John Doe</td>
+                        <td>11-7-2014</td>
+                        <td><span class="tag tag-success">Approved</span></td>
+                        <td>
+                          Bacon ipsum dolor sit amet salami venison chicken
+                          flank fatback doner.
+                        </td>
+                        <td>
+                          <i
+                            role="button"
+                            class="nav-icon fas fa-plus mr-1"
+                          ></i>
+                          <i role="button" class="nav-icon fas fa-edit mr-2"></i
+                          ><i role="button" class="nav-icon fas fa-trash"></i>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>219</td>
+                        <td>Alexander Pierce</td>
+                        <td>11-7-2014</td>
+                        <td><span class="tag tag-warning">Pending</span></td>
+                        <td>
+                          Bacon ipsum dolor sit amet salami venison chicken
+                          flank fatback doner.
+                        </td>
+                        <td>
+                          <i
+                            role="button"
+                            class="nav-icon fas fa-plus mr-1"
+                          ></i>
+                          <i role="button" class="nav-icon fas fa-edit mr-2"></i
+                          ><i role="button" class="nav-icon fas fa-trash"></i>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>657</td>
+                        <td>Bob Doe</td>
+                        <td>11-7-2014</td>
+                        <td><span class="tag tag-primary">Approved</span></td>
+                        <td>
+                          Bacon ipsum dolor sit amet salami venison chicken
+                          flank fatback doner.
+                        </td>
+                        <td>
+                          <i
+                            role="button"
+                            class="nav-icon fas fa-plus mr-1"
+                          ></i>
+                          <i role="button" class="nav-icon fas fa-edit mr-2"></i
+                          ><i role="button" class="nav-icon fas fa-trash"></i>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>175</td>
+                        <td>Mike Doe</td>
+                        <td>11-7-2014</td>
+                        <td><span class="tag tag-danger">Denied</span></td>
+                        <td>
+                          Bacon ipsum dolor sit amet salami venison chicken
+                          flank fatback doner.
+                        </td>
+                        <td>
+                          <i
+                            role="button"
+                            class="nav-icon fas fa-plus mr-1"
+                          ></i>
+                          <i role="button" class="nav-icon fas fa-edit mr-2"></i
+                          ><i role="button" class="nav-icon fas fa-trash"></i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">
+                    <i class="fas fa-text-width"></i>
+                    Unordered List
+                  </h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <ul id="unorder-lst">
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Consectetur adipiscing elit</li>
+                    <li>Integer molestie lorem at massa</li>
+                    <li>Facilisis in pretium nisl aliquet</li>
+                    <li>
+                      Nulla volutpat aliquam velit
+                      <ul>
+                        <li>Phasellus iaculis neque</li>
+                        <li>Purus sodales ultricies</li>
+                        <li>Vestibulum laoreet porttitor sem</li>
+                        <li>Ac tristique libero volutpat at</li>
+                      </ul>
+                    </li>
+                    <li>Faucibus porta lacus fringilla vel</li>
+                    <li>Aenean sit amet erat nunc</li>
+                    <li>Eget porttitor lorem</li>
+                  </ul>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <div class="col-md-8">
+              <!-- Horizontal Form -->
+              <div class="card card-info">
+                <div class="card-header">
+                  <h3 class="card-title">Horizontal Form</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form id="signin" class="form-horizontal">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label"
+                        >Username</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="inputEmail3"
+                          placeholder="Email"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label
+                        for="inputPassword3"
+                        class="col-sm-2 col-form-label"
+                        >Password</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder="Password"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="offset-sm-2 col-sm-10">
+                        <div class="form-check">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            id="exampleCheck2"
+                          />
+                          <label class="form-check-label" for="exampleCheck2"
+                            >Remember me</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-info">Sign in</button>
+                    <button type="submit" class="btn btn-default float-right">
+                      Cancel
+                    </button>
+                  </div>
+                  <!-- /.card-footer -->
+                </form>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.row -->
         </section>
         <!-- /.content -->
       </div>
@@ -861,7 +1095,7 @@
     <script>
       $(function () {
         //Date picker
-        $("#reservationdate").datetimepicker({
+        $("#birthdate").datetimepicker({
           format: "L",
         });
       });
