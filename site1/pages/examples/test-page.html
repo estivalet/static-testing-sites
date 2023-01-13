@@ -145,6 +145,7 @@
                         <div class="form-group">
                           <label>Name</label>
                           <input
+                            id="name"
                             type="text"
                             class="form-control"
                             placeholder="Name ..."
@@ -163,6 +164,7 @@
                               ></span>
                             </div>
                             <input
+                              id="email"
                               type="email"
                               class="form-control"
                               placeholder="Email"
@@ -182,6 +184,7 @@
                             data-target-input="nearest"
                           >
                             <input
+                              id="birth"
                               type="text"
                               class="form-control datetimepicker-input"
                               data-target="#reservationdate"
@@ -205,16 +208,16 @@
                         <label>Gender</label>
                         <div class="form-group clearfix">
                           <div class="d-inline">
-                            <input type="radio" id="radioPrimary1" name="r1" />
-                            <label for="radioPrimary1">Male</label>
+                            <input type="radio" id="gender" name="gender" />
+                            <label for="gender">Male</label>
                           </div>
                           <div class="d-inline">
-                            <input type="radio" id="radioPrimary2" name="r1" />
-                            <label for="radioPrimary2">Female</label>
+                            <input type="radio" id="gender" name="gender" />
+                            <label for="gender">Female</label>
                           </div>
                           <div class="d-inline">
-                            <input type="radio" id="radioPrimary3" name="r1" />
-                            <label for="radioPrimary3">Other</label>
+                            <input type="radio" id="gender" name="gender" />
+                            <label for="gender">Other</label>
                           </div>
                         </div>
                       </div>
@@ -225,19 +228,35 @@
                         <div class="form-group">
                           <label>Interests</label>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" />
+                            <input
+                              class="form-check-input"
+                              value="programming"
+                              type="checkbox"
+                            />
                             <label class="form-check-label">Programming</label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" />
+                            <input
+                              class="form-check-input"
+                              value="music"
+                              type="checkbox"
+                            />
                             <label class="form-check-label">Music</label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" />
+                            <input
+                              class="form-check-input"
+                              value="arts"
+                              type="checkbox"
+                            />
                             <label class="form-check-label">Arts</label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" />
+                            <input
+                              class="form-check-input"
+                              value="movies"
+                              type="checkbox"
+                            />
                             <label class="form-check-label">Movies</label>
                           </div>
                         </div>
@@ -249,6 +268,7 @@
                         <div class="form-group">
                           <label>Address</label>
                           <input
+                            id="address"
                             type="text"
                             class="form-control"
                             placeholder="Address ..."
@@ -262,6 +282,7 @@
                         <div class="form-group">
                           <label>State</label>
                           <input
+                            id="state"
                             type="text"
                             class="form-control"
                             placeholder="State ..."
@@ -275,6 +296,7 @@
                         <div class="form-group">
                           <label>City</label>
                           <input
+                            id="city"
                             type="text"
                             class="form-control"
                             placeholder="City ..."
@@ -288,7 +310,7 @@
                         <!-- select -->
                         <div class="form-group">
                           <label>Country</label>
-                          <select class="form-control">
+                          <select id="country" class="form-control">
                             <option value=""></option>
                             <option value="AF">Afghanistan</option>
                             <option value="AX">Åland Islands</option>
