@@ -56,7 +56,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css" />
   </head>
-  <body class="hold-transition sidebar-mini">
+  <body class="hold-transition sidebar-mini" onload="onload_event()">
     <!-- Site wrapper -->
     <div class="wrapper">
       <!-- Main Sidebar Container -->
@@ -621,6 +621,28 @@
                 <div class="col-sm-12">
                   <div class="card card-secondary">
                     <div class="card-header">
+                      <h3 class="card-title">Element with dynamically ID</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label>Dynamic ID</label>
+                        <input
+                          id="dynamic-id"
+                          type="text"
+                          class="form-control"
+                          placeholder="I keep changing the ID everytime..."
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="card card-secondary">
+                    <div class="card-header">
                       <h3 class="card-title">
                         Dynamic Event - Show Hidden Element
                       </h3>
@@ -937,6 +959,14 @@
         if ($("#message").length) {
           $("#message").first().remove();
         }
+      }
+
+      function onload_event() {
+        let dynamic_element = document.getElementById("dynamic-id");
+        dynamic_element.setAttribute(
+          "id",
+          "element-" + Math.floor(Math.random() * 1000) + 1
+        );
       }
     </script>
   </body>
