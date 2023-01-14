@@ -1164,7 +1164,7 @@
 
       function showDelay(locator) {
         $(locator).after(
-          "<div id='loading'>Wait for it... <img src='img/ajax-loader.gif'></div></br>"
+          "<div id='loading'>Wait for it... <img src='img/ajax-loader.gif'></div><br/>"
         );
       }
       function pauseThenToggleControls(target) {
@@ -1184,17 +1184,15 @@
           check.remove();
           btn.text("Add");
           btn.after("<p id='message'>It's gone!</p>");
-          btn.attr("disabled", false);
-          load.hide();
         } else {
           btn.text("Remove");
           btn.before(
             "<div id='checkbox'><input type='checkbox'> A checkbox</div>"
           );
           btn.after("<p id='message'>It's back!</p>");
-          btn.attr("disabled", false);
-          load.hide();
         }
+        btn.attr("disabled", false);
+        load.remove();
       }
       function toggleInputControls() {
         var btn = $("#input-example button").first();
@@ -1204,15 +1202,13 @@
           input.prop("disabled", false);
           btn.after("<p id='message'>It's enabled!</p>");
           btn.text("Disable");
-          btn.attr("disabled", false);
-          load.hide();
         } else {
           btn.text("Enable");
           input.prop("disabled", true);
           btn.after("<p id='message'>It's disabled!</p>");
-          btn.attr("disabled", false);
-          load.hide();
         }
+        btn.attr("disabled", false);
+        load.remove();
       }
 
       function disableButton(locator) {
