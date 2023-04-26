@@ -1153,9 +1153,9 @@
         pauseThenToggleControls("checkbox");
       }
       function enableDisableInput() {
-        disableButton("#input-example button");
+        disableButton("#form-input-example button");
         clearMessage();
-        showDelay("#input-example button");
+        showDelay("#form-input-example button");
         pauseThenToggleControls("input");
       }
 
@@ -1192,8 +1192,8 @@
         load.remove();
       }
       function toggleInputControls() {
-        var btn = $("#input-example button").first();
-        var input = $("#input-example input").first();
+        var btn = $("#form-input-example button").first();
+        var input = $("#form-input-example input").first();
         var load = $("#loading");
         if (btn.text().trim() == "Enable") {
           input.prop("disabled", false);
